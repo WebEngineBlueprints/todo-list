@@ -1,5 +1,5 @@
 {
-	"name": "webengine-blueprints/hello-you",
+	"name": "webengine-blueprints/todo-list",
 	"description": "Database-driven CRUD application.",
 
 	"require": {
