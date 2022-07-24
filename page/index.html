@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>To do list</title>
+	<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<h1>To do list</h1>
+<p>What do you want to do?</p>
+
+<ul>
+	<li data-template data-bind:class="status">
+		<form method="post">
+			<input type="hidden" name="id" data-bind:value="id" />
+
+			<label>
+				<input type="checkbox" name="completed" onchange="this.form.querySelector('[value=save]').click()" data-bind:checked="?completed" />
+			</label>
+
+			<label>
+				<input name="title" required data-bind:value="title" autocomplete="off" />
+			</label>
+
+			<button name="do" value="save">Save</button>
+			<button name="do" value="delete">Delete</button>
+		</form>
+	</li>
+</ul>
+
+</body>
+</html>

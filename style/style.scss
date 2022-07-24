@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	font-size: 20px;
+}
+
+h1,p {
+	text-align: center;
+}
+
+ul {
+	max-width: 32rem;
+	margin: 0 auto;
+	padding: 1rem;
+	list-style-type: none;
+	border: 2px solid #aaa;
+	border-radius: 0.5rem;
+
+	li {
+		&.new {
+			input[type=checkbox] {
+				visibility: hidden;
+			}
+			input[name=title] {
+				border-bottom: 2px solid dodgerblue;
+				background-color: aliceblue;
+			}
+			button[value=delete] {
+				visibility: hidden;
+			}
+		}
+		&.completed {
+			input[name=title] {
+				text-decoration: line-through;
+			}
+		}
+		form {
+			display: flex;
+			justify-content: stretch;
+			align-items: stretch;
+			padding: 0.5rem 0;
+
+			label:nth-of-type(1) {
+				display: flex;
+				align-items: center;
+			}
+			label:nth-of-type(2) {
+				flex-grow: 1;
+			}
+
+			input[type=checkbox] {
+			}
+			input[name=title] {
+				box-sizing: border-box;
+				width: 100%;
+				padding: 0.5rem;
+				font-size: 1rem;
+				border: none;
+			}
+
+			button {
+				margin-left: 1rem;
+			}
+		}
+	}
+}
