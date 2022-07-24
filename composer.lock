@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7122a3ce367e9ddfc549e5a7d810e6e6",
+    "content-hash": "81955cb2ee8ab71a7e3da18bc38fc185",
     "packages": [
         {
             "name": "magicalex/write-ini-file",
@@ -995,12 +995,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhpGt/WebEngine.git",
-                "reference": "a628916e62a7da6bf98f0b5f41da8757073643c5"
+                "reference": "e6c10c73bfdf41f3a6b0be6aa3237308e632acdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhpGt/WebEngine/zipball/a628916e62a7da6bf98f0b5f41da8757073643c5",
-                "reference": "a628916e62a7da6bf98f0b5f41da8757073643c5",
+                "url": "https://api.github.com/repos/PhpGt/WebEngine/zipball/e6c10c73bfdf41f3a6b0be6aa3237308e632acdb",
+                "reference": "e6c10c73bfdf41f3a6b0be6aa3237308e632acdb",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 "phpgt/config": "^1.0",
                 "phpgt/database": "^1.4",
                 "phpgt/dom": "^v4.0",
-                "phpgt/domtemplate": "^v3.0",
+                "phpgt/domtemplate": "^v3.1",
                 "phpgt/http": "^1.1",
                 "phpgt/logger": "^1.0",
                 "phpgt/routing": "^1.0",
@@ -1060,7 +1060,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-07-24T18:34:45+00:00"
+            "time": "2022-07-24T19:30:17+00:00"
         },
         {
             "name": "psr/container",
