@@ -13,11 +13,11 @@
 
 <ul>
 	<li data-template data-bind:class="status">
-		<form method="post">
+		<form method="post" onchange="this.querySelector('[value=save]').click()">
 			<input type="hidden" name="id" data-bind:value="id" />
 
 			<label>
-				<input type="checkbox" name="completed" onchange="this.form.querySelector('[value=save]').click()" data-bind:checked="?completed" />
+				<input type="checkbox" name="completed" data-bind:checked="?completed" />
 			</label>
 
 			<label>

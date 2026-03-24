@@ -2,9 +2,14 @@
 	--pal-base: #4f5b93;
 }
 
+html {
+	font-size: 24px;
+}
+
 body {
 	margin: 0;
-	font-size: 20px;
+	padding-top: 4rem;
+	font-family: sans-serif;
 }
 
 h1,p {
@@ -16,22 +21,49 @@ ul {
 	margin: 0 auto;
 	padding: 1rem;
 	list-style-type: none;
-	border: 2px solid var(--pal-base);
+	border: 0.1rem solid var(--pal-base);
 	border-radius: 0.5rem;
 
 	li {
-		&.new {
-			input[type=checkbox] {
-				visibility: hidden;
-			}
-			input[name=title] {
-				border-bottom: 2px solid var(--pal-base);
-				background-color: color-mix(in srgb, var(--pal-base), white 95%);
-			}
-			button[value=delete] {
-				visibility: hidden;
+		padding: 0.5rem 0;
+
+		button[value=save] {
+			display: none;
+		}
+		button[value=delete] {
+			display: none;
+		}
+
+		label {
+			&:first-of-type {
+				display: flex;
+				justify-content: center;
+				width: 2rem;
 			}
 		}
+
+		&.new {
+			input[type=checkbox] {
+				display: none;
+			}
+			input[name=title] {
+				background-color: color-mix(in srgb, var(--pal-base), white 95%);
+				border: 0.1rem solid var(--pal-base);
+			}
+			button[value=save] {
+				display: initial;
+			}
+			button[value=delete] {
+				display: none;
+			}
+
+			form:focus-within {
+				button[value=delete] {
+					display: none;
+				}
+			}
+		}
+
 		&.completed {
 			input[name=title] {
 				text-decoration: line-through;
@@ -41,8 +73,14 @@ ul {
 			display: flex;
 			justify-content: stretch;
 			align-items: stretch;
-			padding: 0.5rem 0;
+			gap: 0.5rem;
 			accent-color: var(--pal-base);
+
+			&:focus-within {
+				button[value=delete] {
+					display: initial;
+				}
+			}
 
 			label:nth-of-type(1) {
 				display: flex;
@@ -52,19 +90,29 @@ ul {
 				flex-grow: 1;
 			}
 
-			input[type=checkbox] {
-			}
 			input[name=title] {
 				box-sizing: border-box;
 				width: 100%;
 				padding: 0.5rem;
 				font-size: 1rem;
 				border: none;
+				border-radius: 0.5rem;
 			}
 
 			button {
 				margin-left: 1rem;
+				width: 4rem;
+				border: 0.1rem solid var(--pal-base);
+				border-radius: 0.5rem;
 			}
 		}
+	}
+}
+
+input,button {
+	outline-offset: 0.1rem;
+
+	&:active, &:focus {
+		outline: 0.1rem solid var(--pal-base);
 	}
 }
