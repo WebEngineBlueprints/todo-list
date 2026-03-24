@@ -2,10 +2,10 @@
 use App\Todo\TodoItem;
 use App\Todo\TodoList;
 use Gt\Dom\HTMLDocument;
-use Gt\DomTemplate\DocumentBinder;
+use Gt\DomTemplate\Binder;
 use Gt\Input\Input;
 
-function go(DocumentBinder $binder, TodoList $todoList, HTMLDocument $document):void {
+function go(Binder $binder, TodoList $todoList, HTMLDocument $document):void {
 	$todoListItems = $todoList->getAll();
 	array_push($todoListItems, new TodoItem("", "", false));
 	$binder->bindList($todoListItems);

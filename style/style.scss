@@ -1,3 +1,7 @@
+:root {
+	--pal-base: #4f5b93;
+}
+
 body {
 	margin: 0;
 	font-size: 20px;
@@ -12,7 +16,7 @@ ul {
 	margin: 0 auto;
 	padding: 1rem;
 	list-style-type: none;
-	border: 2px solid #aaa;
+	border: 2px solid var(--pal-base);
 	border-radius: 0.5rem;
 
 	li {
@@ -21,8 +25,8 @@ ul {
 				visibility: hidden;
 			}
 			input[name=title] {
-				border-bottom: 2px solid dodgerblue;
-				background-color: aliceblue;
+				border-bottom: 2px solid var(--pal-base);
+				background-color: color-mix(in srgb, var(--pal-base), white 95%);
 			}
 			button[value=delete] {
 				visibility: hidden;
@@ -38,6 +42,7 @@ ul {
 			justify-content: stretch;
 			align-items: stretch;
 			padding: 0.5rem 0;
+			accent-color: var(--pal-base);
 
 			label:nth-of-type(1) {
 				display: flex;
