@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>To do list</title>
-	<link rel="stylesheet" href="/style.css" />
+	<link rel="stylesheet" href="/style/style.css" />
 </head>
 <body>
 
@@ -12,7 +12,7 @@
 <p>What do you want to do?</p>
 
 <ul>
-	<li data-template data-bind:class="status">
+	<li data-list data-bind:class="status">
 		<form method="post" onchange="this.querySelector('[value=save]').click()">
 			<input type="hidden" name="id" data-bind:value="id" />
 
