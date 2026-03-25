@@ -15,7 +15,7 @@ class TodoList {
 	public function getAll():array {
 		$todoItemArray = [];
 
-		foreach($this->db->fetchAll("todo/getAll") as $row) {
+		foreach($this->db->fetchAll("todo/retrieve") as $row) {
 			array_push($todoItemArray, $this->rowToTodoItem($row));
 		}
 
@@ -23,16 +23,16 @@ class TodoList {
 	}
 
 	public function update(string $id, string $title, ?bool $completed):void {
-		$this->db->update("todo/updateById", $title, $completed ?? false, $id);
+		$this->db->update("todo/update", $title, $completed ?? false, $id);
 	}
 
 	public function create(string $title):void {
 		$id = new Ulid();
-		$this->db->insert("todo/insert", $title, $id);
+		$this->db->insert("todo/create", $title, $id);
 	}
 
 	public function delete(string $id):void {
-		$this->db->delete("todo/deleteById", $id);
+		$this->db->delete("todo/delete", $id);
 	}
 
 	private function rowToToDoItem(?Row $row = null):?TodoItem {
