@@ -1,3 +1,4 @@
+/** Here is where all the default palette variables are defined **/
 :root {
 	--pal-base: #3f51b5;
 	--pal-base-strong: #2f3f9f;
@@ -21,6 +22,7 @@
 	--radius-row: 1rem;
 }
 
+/** html and body set the basics, along with a gradient background on the page */
 html {
 	font-size: 20px;
 	height: 100%;
@@ -59,6 +61,10 @@ p {
 }
 
 button {
+/*
+All buttons should take on a consistent look and feel, but below each
+button has its own style applied.
+ */
 	min-width: 4rem;
 	padding: 0;
 	margin-left: 0;
@@ -90,6 +96,9 @@ button {
 		box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.18);
 	}
 
+/*
+The individual buttons can be identified by their value attributes.
+ */
 	&[value=save] {
 		background: linear-gradient(135deg, var(--pal-base), var(--pal-base-strong));
 		color: white;
@@ -110,6 +119,10 @@ button {
 	}
 }
 
+/*
+The ul represents the entire list. Note that the list includes the "new" to do
+item at the bottom of the page, which is styled slightly differently.
+ */
 ul {
 	max-width: 32rem;
 	margin: 0 0.5rem;
@@ -148,6 +161,11 @@ ul {
 			}
 		}
 
+/*
+Here's the definition for the "new" item, at the bottom of the list.
+We don't want to display the checkbox or the delete button (because there's no
+item to check or delete yet!)
+ */
 		&.new {
 			input[type=checkbox] {
 				display: none;
@@ -174,6 +192,10 @@ ul {
 			}
 		}
 
+/*
+The final alteration is when a to do item is marked as completed, we should
+draw it in a different colour and strike out the text.
+ */
 		&.completed {
 			background-color: rgba(148, 163, 184, 0.08);
 
@@ -187,6 +209,10 @@ ul {
 	}
 }
 
+/*
+Here we're breaking out of the nesting to define some form styling that's
+applied to each item in the list.
+ */
 form {
 	display: flex;
 	justify-content: stretch;
@@ -262,6 +288,12 @@ form {
 	}
 }
 
+/*
+The styling is complete at this point, but so far everything's been designed
+to display on a small screen - here we can add some extra styles for when larger
+screens are available. This is referred to as mobile first design.
+A media query only applies the styles within once a certain width is reached.
+ */
 @media(min-width: 42rem) {
 	html {
 		font-size: 24px;

@@ -3,16 +3,17 @@ use App\Todo\TodoItem;
 use App\Todo\TodoList;
 use Gt\Dom\HTMLDocument;
 use Gt\DomTemplate\Binder;
+use Gt\Http\Response;
 use Gt\Input\Input;
 
-function go(Binder $binder, TodoList $todoList, HTMLDocument $document):void {
+function go(TodoList $todoList, Binder $binder, HTMLDocument $document):void {
 	$todoListItems = $todoList->getAll();
 	array_push($todoListItems, new TodoItem("", "", false));
 	$binder->bindList($todoListItems);
 	$document->querySelector("li.new input[name='title']")->autofocus = true;
 }
 
-function do_save(Input $input, TodoList $todoList):void {
+function do_save(TodoList $todoList, Input $input, Response $response):void {
 	if($id = $input->getString("id")) {
 // If there's an ID, we shall update the existing record.
 		$todoList->update(
@@ -28,12 +29,10 @@ function do_save(Input $input, TodoList $todoList):void {
 		);
 	}
 
-	header("Location: ./");
-	exit;
+	$response->reload();
 }
 
-function do_delete(Input $input, TodoList $todoList):void {
+function do_delete(TodoList $todoList, Input $input, Response $response):void {
 	$todoList->delete($input->getString("id"));
-	header("Location: ./");
-	exit;
+	$response->reload();
 }
